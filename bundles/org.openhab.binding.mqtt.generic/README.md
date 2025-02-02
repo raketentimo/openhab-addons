@@ -26,7 +26,10 @@ Example:
 Let's assume there is an MQTT capable light bulb.
 
 It has a unique id amongst all light bulbs, say "device123". The manufacturer decided to accept new
-brightness values on "device123/brightness/set". In openHAB we call that a **command topic**.
+brightness values on "device123/brightness/set". In openHAB we call that a **command topic**. You can use
+command topics in different ways: "device123/brightness/set" usually expects a JSON string as payload while 
+"device123/set/brightness" works [without JSON](https://www.zigbee2mqtt.io/guide/usage/mqtt_topics_and_messages.html#zigbee2mqtt-friendly-name-set) 
+and expects a single value.
 
 And now assume that we have a mobile phone (or openHAB itself) and we register with the MQTT broker,
 and want to retrieve the current brightness value. The manufacturer specified that this value can
